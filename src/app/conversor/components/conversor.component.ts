@@ -15,6 +15,7 @@ export class ConversorComponent implements OnInit {
   conversao: Conversao;
   possuiErro: boolean;
   conversaoResponse: ConversaoResponse;
+  brilho: boolean;
 
   @ViewChild("conversaoForm", { static: true }) conversaoForm: NgForm;
 

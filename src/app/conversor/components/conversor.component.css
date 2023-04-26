@@ -2,7 +2,10 @@
     color: rgb(0, 79, 0);
     font-size: 20px;
     vertical-align: middle;
-    text-shadow: 0 0 3px #32CD32, 0 0 3px #32CD32, 0 0 3px #32CD32, 0 0 3px #32CD32, 0 0 6px #32CD32, 0 0 3px #32CD32, 0 0 3px #32CD32;
+}
+
+.brilho{
+  text-shadow: 0 0 3px #32CD32, 0 0 3px #32CD32, 0 0 3px #32CD32, 0 0 3px #32CD32, 0 0 6px #32CD32, 0 0 3px #32CD32, 0 0 3px #32CD32;
 }
 
 .panel{

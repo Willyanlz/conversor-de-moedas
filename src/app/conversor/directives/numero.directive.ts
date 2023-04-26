@@ -1,5 +1,6 @@
 import { Directive, HostListener, ElementRef, OnInit  } from '@angular/core';
 import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
+import { ConversorComponent } from '../components';
 
 @Directive({
   selector: '[numero]',
@@ -32,12 +33,18 @@ export class NumeroDirective implements ControlValueAccessor{
     if(posDecimais > 0){
       valor = valor.substr(0, posDecimais) + "." + valor.substr(posDecimais);
     }
-      
-    // limita o valor a 999999999
-    if (valor.length > 9) {
-      valor = valor.substr(0, 9);
+
+    if (Number(valor) <= 0) {
+      document.getElementById("brilho").classList.remove("brilho");
+    }else{
+      document.getElementById("brilho").classList.add("brilho");
     }
 
+    // limita o valor a 999999999
+    if (valor.length > 9 || Number(valor) < 0) {
+      valor = valor.substr(0, 9);
+
+    }
     $event.target.value = valor;
     this.onChanged(valor);
   }
