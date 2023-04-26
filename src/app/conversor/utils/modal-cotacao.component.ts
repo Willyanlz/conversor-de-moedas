@@ -16,7 +16,7 @@ export class ModalCotacaoComponent implements OnInit{
 
   constructor(private conversorService: ConversorService){}
   
-
+  
   ngOnInit(): void {
   }
 
@@ -29,6 +29,7 @@ export class ModalCotacaoComponent implements OnInit{
       return "0";
     }
     // return (this.conversao.valor * this.conversaoResponse.conversion_rate[this.conversao.moedaPara]).toFixed(3);
+
     return (this.conversao.valor * this.conversaoResponse.conversion_rate).toFixed(2);
   }
 
@@ -37,9 +38,8 @@ export class ModalCotacaoComponent implements OnInit{
   //   // return Number((this.conversaoResponse.conversion_rate/1).toFixed(3));
   // }
 
-  // get cotacaoDe(): number{;
-  //   return this.conversorService.cotacaoDe(this.conversaoResponse, this.conversao);
-
+  // get cotacaoDe(): number{
+  //   return (this.conversorService.cotacaoDe(this.conversaoResponse, this.conversao));
   // }
 
   get dataCotacao(): string{
