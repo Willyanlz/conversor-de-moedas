@@ -15,18 +15,18 @@ export class ConversorComponent implements OnInit {
   conversao: Conversao;
   possuiErro: boolean;
   conversaoResponse: ConversaoResponse;
-  brilho: boolean;
 
   @ViewChild("conversaoForm", { static: true }) conversaoForm: NgForm;
 
   constructor(
     private moedaService: MoedaService,
-    private conversorService: ConversorService) {}
+    private conversorService: ConversorService,){}
 
   ngOnInit() {
   	this.moedas = this.moedaService.listarTodas();
   	this.init();
   }
+
 
   /**
    * Efetua a chamada para a conversão dos valores.
@@ -56,12 +56,22 @@ export class ConversorComponent implements OnInit {
 
 
   converter(): void {
-    if (this.conversaoForm.form.valid) {
+    if (this.conversaoForm.form.valid || this.possuiErro == false) {
       this.conversorService.converter(this.conversao).subscribe({
         next: response => this.conversaoResponse = response,
         error: error => this.possuiErro = true
       });
     }
+  }
+
+  inverteInOut(): void {
+    this.converter()
+    const moedaDe = this.conversao.moedaDe;
+    const moedaPara = this.conversao.moedaPara;
+  
+    this.conversao.moedaDe = moedaPara;
+    this.conversao.moedaPara = moedaDe; 
+    console.log(this.inverteInOut)
   }
 
 }

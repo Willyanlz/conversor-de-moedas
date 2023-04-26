@@ -16,7 +16,9 @@
 			</select>
 
 			&nbsp;
-			<span class="glyphicon glyphicon-transfer" aria-hidden="true" id="brilho" ></span>
+			<button style="background-color: transparent; border: 0;"  (click)="inverteInOut()">
+				<span class="glyphicon glyphicon-transfer" aria-hidden="true" id="brilho" ></span>
+			</button>
 			&nbsp;
 			
 			<select [(ngModel)]="conversao.moedaPara" #nome="ngModel" name="moedaPara" class="form-control" required>
