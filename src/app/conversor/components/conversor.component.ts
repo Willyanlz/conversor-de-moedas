@@ -70,8 +70,7 @@ export class ConversorComponent implements OnInit {
     const moedaPara = this.conversao.moedaPara;
   
     this.conversao.moedaDe = moedaPara;
-    this.conversao.moedaPara = moedaDe; 
-    console.log(this.inverteInOut)
+    this.conversao.moedaPara = moedaDe;
   }
 
 }
