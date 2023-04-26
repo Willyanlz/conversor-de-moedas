@@ -1,0 +1,36 @@
+.container-fluid{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 0;
+    background-color: rgb(255, 0, 0);
+}
+nav {
+    width: 99vw;
+}
+
+.navbar-header>a{
+    display: flex;
+    flex-direction: row;
+    font-size: 25px;
+    vertical-align: middle;  
+    color: rgb(255, 255, 255);
+}
+
+h2{
+    margin-top: -5px;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+
+.navbar-default{
+    border: 0;
+    border-radius: 15px;
+    box-shadow: 10px 10px 20px -15px black;
+    background-color: transparent;
+}
+
+app-conversor{
+    width: 80vw;
+    margin-top: 15%;
+}
